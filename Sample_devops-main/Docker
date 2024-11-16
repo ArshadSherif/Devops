@@ -1,0 +1,8 @@
+sudo yum update -y
+sudo yum install docker
+sudo service docker start
+sudo usermod -aG docker ec2-user
+reboot the instance / install docker again 
+sudo service docker start
+docker info
+docker --version

@@ -1,0 +1,25 @@
+
+sudo yum install -y python3
+sudo yum install -y python3-pip
+pip3 install selenium
+sudo yum install -y wget
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+sudo yum install -y ./google-chrome-stable_current_x86_64.rpm
+wget https://chromedriver.storage.googleapis.com/91.0.4472.101/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/local/bin/
+    sudo chmod +x /usr/local/bin/chromedriver
+
+
+then in  # test_selenium.py write this code open editon through nano test_selenium.py
+# test_selenium.py
+from selenium import webdriver
+
+driver = webdriver.Chrome()  # for Chrome
+
+driver.get("http://www.google.com")
+print(driver.title)
+driver.quit()
+
+
+run the script: python3 test_selenium.py
